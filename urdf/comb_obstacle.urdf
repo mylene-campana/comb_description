@@ -1,0 +1,307 @@
+<?xml version="1.0"?>
+
+<!-- x delay : one over two -->
+<!-- y delay : each time -->
+
+<robot name="comb_obstacle">
+  <material name="Red">
+    <color rgba="1 0 0 1"/>
+  </material>
+  
+  <link name="obstacle_base">
+    <visual>
+      <origin xyz="0 0 0"/>
+      <geometry>
+        <box size="1.4 0.4 1" /> <!-- ideally length would be a parameter -->
+      </geometry>
+      <material name="Red"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0"/>
+      <geometry>
+        <box size="1.4 0.4 1" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="j_object_one" type="fixed">
+    <parent link="obstacle_base"/>
+    <child link="l_object_one"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+        
+  <link name="l_object_one">
+    <visual>
+      <origin xyz="1.4 0.8 0"/>
+      <geometry>
+        <box size="1.4 0.4 1" />
+      </geometry>
+      <material name="Red"/>
+    </visual>
+    <collision>
+      <origin xyz="1.4 0.8 0"/>
+      <geometry>
+        <box size="1.4 0.4 1" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="j_object_two" type="fixed">
+    <parent link="obstacle_base"/>
+    <child link="l_object_two"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+        
+  <link name="l_object_two">
+    <visual>
+      <origin xyz="0 1.6 0"/>
+      <geometry>
+        <box size="1.4 0.4 1" />
+      </geometry>
+      <material name="Red"/>
+    </visual>
+    <collision>
+      <origin xyz="0 1.6 0"/>
+      <geometry>
+        <box size="1.4 0.4 1" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="j_object_three" type="fixed">
+    <parent link="obstacle_base"/>
+    <child link="l_object_three"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+        
+  <link name="l_object_three">
+    <visual>
+      <origin xyz="1.4 2.4 0"/>
+      <geometry>
+        <box size="1.4 0.4 1" />
+      </geometry>
+      <material name="Red"/>
+    </visual>
+    <collision>
+      <origin xyz="1.4 2.4 0"/>
+      <geometry>
+        <box size="1.4 0.4 1" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="j_object_four" type="fixed">
+    <parent link="obstacle_base"/>
+    <child link="l_object_four"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+        
+  <link name="l_object_four">
+    <visual>
+      <origin xyz="0 3.2 0"/>
+      <geometry>
+        <box size="1.4 0.4 1" />
+      </geometry>
+      <material name="Red"/>
+    </visual>
+    <collision>
+      <origin xyz="0 3.2 0"/>
+      <geometry>
+        <box size="1.4 0.4 1" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="j_object_four_bis" type="fixed">
+    <parent link="obstacle_base"/>
+    <child link="l_object_four_bis"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+        
+  <link name="l_object_four_bis">
+    <visual>
+      <origin xyz="1.4 4 0"/>
+      <geometry>
+        <box size="1.4 0.4 1" />
+      </geometry>
+      <material name="Red"/>
+    </visual>
+    <collision>
+      <origin xyz="1.4 4 0"/>
+      <geometry>
+        <box size="1.4 0.4 1" />
+      </geometry>
+    </collision>
+  </link>
+  
+  <joint name="j_object_five" type="fixed">
+    <parent link="obstacle_base"/>
+    <child link="l_object_five"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+        
+  <link name="l_object_five">
+    <visual>
+      <origin xyz="1.4 -0.8 0"/>
+      <geometry>
+        <box size="1.4 0.4 1" />
+      </geometry>
+      <material name="Red"/>
+    </visual>
+    <collision>
+      <origin xyz="1.4 -0.8 0"/>
+      <geometry>
+        <box size="1.4 0.4 1" />
+      </geometry>
+    </collision>
+  </link>
+  
+  <joint name="j_object_six" type="fixed">
+    <parent link="obstacle_base"/>
+    <child link="l_object_six"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+        
+  <link name="l_object_six">
+    <visual>
+      <origin xyz="0 -1.6 0"/>
+      <geometry>
+        <box size="1.4 0.4 1" />
+      </geometry>
+      <material name="Red"/>
+    </visual>
+    <collision>
+      <origin xyz="0 -1.6 0"/>
+      <geometry>
+        <box size="1.4 0.4 1" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="j_object_seven" type="fixed">
+    <parent link="obstacle_base"/>
+    <child link="l_object_seven"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+        
+  <link name="l_object_seven">
+    <visual>
+      <origin xyz="1.4 -2.4 0"/>
+      <geometry>
+        <box size="1.4 0.4 1" />
+      </geometry>
+      <material name="Red"/>
+    </visual>
+    <collision>
+      <origin xyz="1.4 -2.4 0"/>
+      <geometry>
+        <box size="1.4 0.4 1" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="j_object_eight" type="fixed">
+    <parent link="obstacle_base"/>
+    <child link="l_object_eight"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+        
+  <link name="l_object_eight">
+    <visual>
+      <origin xyz="0 -3.2 0"/>
+      <geometry>
+        <box size="1.4 0.4 1" />
+      </geometry>
+      <material name="Red"/>
+    </visual>
+    <collision>
+      <origin xyz="0 -3.2 0"/>
+      <geometry>
+        <box size="1.4 0.4 1" />
+      </geometry>
+    </collision>
+  </link>
+  
+  <joint name="j_object_eight_bis" type="fixed">
+    <parent link="obstacle_base"/>
+    <child link="l_object_eight_bis"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+        
+  <link name="l_object_eight_bis">
+    <visual>
+      <origin xyz="1.4 -4 0"/>
+      <geometry>
+        <box size="1.4 0.4 1" />
+      </geometry>
+      <material name="Red"/>
+    </visual>
+    <collision>
+      <origin xyz="1.4 -4 0"/>
+      <geometry>
+        <box size="1.4 0.4 1" />
+      </geometry>
+    </collision>
+  </link>
+  
+  <joint name="j_object_border_one" type="fixed">
+    <parent link="obstacle_base"/>
+    <child link="l_object_border_one"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+        
+  <link name="l_object_border_one">
+    <visual>
+      <origin xyz="-0.9 0 0"/>
+      <geometry>
+        <box size="0.4 8.4 1" />
+      </geometry>
+      <material name="Red"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.9 0 0"/>
+      <geometry>
+        <box size="0.4 8.4 1" />
+      </geometry>
+    </collision>
+  </link>
+  
+  <joint name="j_object_border_two" type="fixed">
+    <parent link="obstacle_base"/>
+    <child link="l_object_border_two"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+        
+  <link name="l_object_border_two">
+    <visual>
+      <origin xyz="2.2 0 0"/>
+      <geometry>
+        <box size="0.4 8.4 1" />
+      </geometry>
+      <material name="Red"/>
+    </visual>
+    <collision>
+      <origin xyz="2.2 0 0"/>
+      <geometry>
+        <box size="0.4 8.4 1" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="j_object_floor" type="fixed">
+    <parent link="obstacle_base"/>
+    <child link="l_object_floor"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+
+  <link name="l_object_floor"> <!-- brown floor -->
+    <visual>
+      <origin xyz="0.7 0 -0.01" rpy="0 0 0"/> <!-- origin not taken in account ! -->
+      <geometry>
+        <box size="4.2 8.4 0.01"/>
+      </geometry>
+      <material name="White">
+        <color rgba="0.9 0.9 0.9 1"/>
+      </material>
+    </visual>
+  </link>
+</robot>
