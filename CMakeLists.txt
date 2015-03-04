@@ -2,7 +2,7 @@
 # Author: Mylene Campana
 #
 # This file is part of comb_description.
-# hpp-hrp2 is free software: you can redistribute it
+# comb_description is free software: you can redistribute it
 # and/or modify it under the terms of the GNU Lesser General Public
 # License as published by the Free Software Foundation, either version
 # 3 of the License, or (at your option) any later version.
@@ -40,6 +40,9 @@ install(FILES urdf/comb_obstacle.urdf
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/urdf
   )
 install(FILES urdf/broken_comb_obstacle.urdf
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/urdf
+  )
+install(FILES urdf/hard_comb_obstacle.urdf
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/urdf
   )
 install(FILES srdf/object.srdf 

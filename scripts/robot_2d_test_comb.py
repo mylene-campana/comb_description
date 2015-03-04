@@ -11,20 +11,21 @@ import matplotlib.pyplot as plt
 robot = Robot ('robot_2d_comb')
 ps = ProblemSolver (robot)
 cl = robot.client
-cl.obstacle.loadObstacleModel('comb_description','comb_obstacle','')
+#cl.obstacle.loadObstacleModel('comb_description','comb_obstacle','')
 #cl.obstacle.loadObstacleModel('comb_description','broken_comb_obstacle','')
-
+cl.obstacle.loadObstacleModel('comb_description','hard_comb_obstacle','')
 
 from hpp.gepetto import Viewer, PathPlayer
 Viewer.withFloor = True
 r = Viewer (ps)
 pp = PathPlayer (cl, r)
-r.loadObstacleModel ("comb_description","comb_obstacle","comb_obstacle")
+#r.loadObstacleModel ("comb_description","comb_obstacle","comb_obstacle")
 #r.loadObstacleModel ("comb_description","broken_comb_obstacle","broken_comb_obstacle")
-
+r.loadObstacleModel ("comb_description","hard_comb_obstacle","hard_comb_obstacle")
 
 # q = [x, y] # limits in URDF file
-q1 = [0, -4.5]; q2 = [0, 4.5]
+#q1 = [0, -4.5]; q2 = [0, 4.5]
+q1 = [-0.5, -4]; q2 = [-0.5, 4] # hard_comb
 cl.problem.setInitialConfig (q1); cl.problem.addGoalConfig (q2); cl.problem.solve ()
 begin=time.time()
 cl.problem.optimizePath(0)
@@ -32,15 +33,16 @@ end=time.time()
 print "Optim time: "+str(end-begin)
 
 
-len(cl.problem.nodes ())
-cl.problem.pathLength(0)
-cl.problem.pathLength(1)
+len(ps.nodes ())
+len(ps.getWaypoints (0))
+ps.pathLength(0)
+ps.pathLength(1)
 
 
 ## Debug Optimization Tools ##############
 
 import matplotlib.pyplot as plt
-num_log = 31108
+num_log = 16710
 from parseLog import parseNodes, parsePathVector
 from mutable_trajectory_plot import planarPlot, addNodePlot, addPathPlot
 

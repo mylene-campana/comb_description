@@ -17,22 +17,9 @@ dt = 0.02 # global drawing step size
 # --------------------------------------------------------------------#
 
 def planarPlot (cl, nPath0, nPath1, plt, lim):
-    dx = 0.8 # comb parameter
-    dl = 1.4
-    dL = 0.4
-    plt.gcf().gca().add_artist(plt.Rectangle((0-dl/2,0-dL/2),dl,dL,color='r'))
-    plt.gcf().gca().add_artist(plt.Rectangle((dl/2,dx-dL/2),dl,dL,color='r'))
-    plt.gcf().gca().add_artist(plt.Rectangle((0-dl/2,2*dx-dL/2),dl,dL,color='r'))
-    plt.gcf().gca().add_artist(plt.Rectangle((dl/2,3*dx-dL/2),dl,dL,color='r'))
-    plt.gcf().gca().add_artist(plt.Rectangle((0-dl/2,4*dx-dL/2),dl,dL,color='r'))
-    plt.gcf().gca().add_artist(plt.Rectangle((dl/2,5*dx-dL/2),dl,dL,color='r'))
-    plt.gcf().gca().add_artist(plt.Rectangle((dl/2,-1*dx-dL/2),dl,dL,color='r'))
-    plt.gcf().gca().add_artist(plt.Rectangle((0-dl/2,-2*dx-dL/2),dl,dL,color='r'))
-    plt.gcf().gca().add_artist(plt.Rectangle((dl/2,-3*dx-dL/2),dl,dL,color='r'))
-    plt.gcf().gca().add_artist(plt.Rectangle((0-dl/2,-4*dx-dL/2),dl,dL,color='r'))
-    plt.gcf().gca().add_artist(plt.Rectangle((dl/2,-5*dx-dL/2),dl,dL,color='r'))
-    plt.gcf().gca().add_artist(plt.Rectangle((-0.9-dL/2,0-8.4/2),dL,8.4,color='r'))
-    plt.gcf().gca().add_artist(plt.Rectangle((2.2-dL/2,0-8.4/2),dL,8.4,color='r'))
+    # Select comb-obstacle to plot :
+    #plt = plotRectangles_comb (plt)
+    plt = plotRectangles_hardComb (plt)
     
     init = cl.problem.getInitialConfig ()
     goal = cl.problem.getGoalConfigs ()[0] # first goal
@@ -96,3 +83,47 @@ def addPathPlot (cl, path, pathColor, lw, plt):
     plt.plot([goal[0], path[size-1][0]], [goal[1], path[size-1][1]], pathColor, linewidth=lw)
     return plt
 
+# --------------------------------------------------------------------#
+
+# Plot 2D rectangles for normal comb (no broken tooth)
+def plotRectangles_comb (plt):
+    dx = 0.8 # comb parameter
+    dl = 1.4
+    dL = 0.4
+    plt.gcf().gca().add_artist(plt.Rectangle((0-dl/2,0-dL/2),dl,dL,color='r'))
+    plt.gcf().gca().add_artist(plt.Rectangle((dl/2,dx-dL/2),dl,dL,color='r'))
+    plt.gcf().gca().add_artist(plt.Rectangle((0-dl/2,2*dx-dL/2),dl,dL,color='r'))
+    plt.gcf().gca().add_artist(plt.Rectangle((dl/2,3*dx-dL/2),dl,dL,color='r'))
+    plt.gcf().gca().add_artist(plt.Rectangle((0-dl/2,4*dx-dL/2),dl,dL,color='r'))
+    plt.gcf().gca().add_artist(plt.Rectangle((dl/2,5*dx-dL/2),dl,dL,color='r'))
+    plt.gcf().gca().add_artist(plt.Rectangle((dl/2,-1*dx-dL/2),dl,dL,color='r'))
+    plt.gcf().gca().add_artist(plt.Rectangle((0-dl/2,-2*dx-dL/2),dl,dL,color='r'))
+    plt.gcf().gca().add_artist(plt.Rectangle((dl/2,-3*dx-dL/2),dl,dL,color='r'))
+    plt.gcf().gca().add_artist(plt.Rectangle((0-dl/2,-4*dx-dL/2),dl,dL,color='r'))
+    plt.gcf().gca().add_artist(plt.Rectangle((dl/2,-5*dx-dL/2),dl,dL,color='r'))
+    plt.gcf().gca().add_artist(plt.Rectangle((-0.9-dL/2,0-8.4/2),dL,8.4,color='r'))
+    plt.gcf().gca().add_artist(plt.Rectangle((2.2-dL/2,0-8.4/2),dL,8.4,color='r'))
+    return plt
+
+# --------------------------------------------------------------------#
+
+# Plot 2D rectangles for hard comb (with broken tooth)
+def plotRectangles_hardComb (plt):
+    dx = 0.8 # comb parameter
+    dl = 2.2
+    dL = 0.4
+    d = 1.1
+    plt.gcf().gca().add_artist(plt.Rectangle((-0.3-1.4/2,0-dL/2),1.4,dL,color='r')) # broken
+    plt.gcf().gca().add_artist(plt.Rectangle((0,dx-dL/2),dl,dL,color='r'))
+    plt.gcf().gca().add_artist(plt.Rectangle((0-dl/2,2*dx-dL/2),dl,dL,color='r'))
+    plt.gcf().gca().add_artist(plt.Rectangle((0,3*dx-dL/2),dl,dL,color='r'))
+    plt.gcf().gca().add_artist(plt.Rectangle((0-dl/2,4*dx-dL/2),dl,dL,color='r'))
+    plt.gcf().gca().add_artist(plt.Rectangle((0,5*dx-dL/2),dl,dL,color='r'))
+    plt.gcf().gca().add_artist(plt.Rectangle((0,-1*dx-dL/2),dl,dL,color='r'))
+    plt.gcf().gca().add_artist(plt.Rectangle((0-dl/2,-2*dx-dL/2),dl,dL,color='r'))
+    plt.gcf().gca().add_artist(plt.Rectangle((0,-3*dx-dL/2),dl,dL,color='r'))
+    plt.gcf().gca().add_artist(plt.Rectangle((0-dl/2,-4*dx-dL/2),dl,dL,color='r'))
+    plt.gcf().gca().add_artist(plt.Rectangle((0,-5*dx-dL/2),dl,dL,color='r'))
+    plt.gcf().gca().add_artist(plt.Rectangle((-0.9-dL/2,0-8.4/2),dL,8.4,color='r'))
+    plt.gcf().gca().add_artist(plt.Rectangle((2.2-dL/2,0-8.4/2),dL,8.4,color='r'))
+    return plt
